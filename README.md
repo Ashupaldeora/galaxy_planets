@@ -25,10 +25,14 @@ Welcome to the **Galaxy Planets** app! This Flutter-based application showcases 
 <img src="https://github.com/user-attachments/assets/7e2e9e83-8414-4892-9c33-581c3cee5fae" height="500px" hspace=20></img>
 <img src="https://github.com/user-attachments/assets/a8f13ee5-68e8-44ae-94c3-8ea3653edcc0" height="500px" hspace=20></img>
   <img src="https://github.com/user-attachments/assets/7bb7cf38-9d57-401c-b521-15d16a8ddc24" height="500px" hspace=20></img>
-  <video src="https://github.com/user-attachments/assets/da19448b-7c7a-4871-941b-349b3036c126">
+  <video src="https://github.com/user-attachments/assets/a01da9e4-a285-42f4-89a2-3ff95ec2d011">
 </div>
     
     
+
+
+
+
 
 
 
