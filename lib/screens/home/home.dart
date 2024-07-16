@@ -2,6 +2,7 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:galaxy_planets/screens/home/components/planet_details.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -33,9 +34,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         }
       });
 
-    // rotationAnimation = Tween<double>(begin: 0, end: 0.6).animate(
-    //   CurvedAnimation(parent: animationController, curve: Curves.easeOut),
-    // );
     planetReverseAnimation =
         Tween<double>(begin: 0.1, end: 0.5).animate(animationController);
     planetAnimation =
@@ -149,16 +147,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             bottom: (provider.currentPlanetIndex == 0 ||
                     provider.currentPlanetIndex == 2)
                 ? provider.isPlanetOpened
-                    ? 440
+                    ? 490
                     : -80
                 : (provider.currentPlanetIndex == 3 ||
                         provider.currentPlanetIndex == 7)
                     ? provider.isPlanetOpened
-                        ? 450
+                        ? 490
                         : -150
                     : provider.currentPlanetIndex == 4
                         ? provider.isPlanetOpened
-                            ? 450
+                            ? 490
                             : -140
                         : provider.currentPlanetIndex == 5
                             ? provider.isPlanetOpened
@@ -166,45 +164,45 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 : -220
                             : provider.currentPlanetIndex == 8
                                 ? provider.isPlanetOpened
-                                    ? 460
+                                    ? 490
                                     : -160
                                 : provider.currentPlanetIndex == 9
                                     ? provider.isPlanetOpened
                                         ? 430
                                         : -200
                                     : provider.isPlanetOpened
-                                        ? 460
+                                        ? 490
                                         : -120,
             right: (provider.currentPlanetIndex == 3)
                 ? provider.isPlanetOpened
-                    ? 50
+                    ? 80
                     : -120
                 : provider.currentPlanetIndex == 4
                     ? provider.isPlanetOpened
-                        ? 50
+                        ? 80
                         : -130
                     : provider.currentPlanetIndex == 5
                         ? provider.isPlanetOpened
-                            ? 50
+                            ? 80
                             : -170
                         : provider.currentPlanetIndex == 6
                             ? provider.isPlanetOpened
-                                ? 50
+                                ? 80
                                 : -100
                             : provider.currentPlanetIndex == 7
                                 ? provider.isPlanetOpened
-                                    ? 50
+                                    ? 80
                                     : -120
                                 : provider.currentPlanetIndex == 8
                                     ? provider.isPlanetOpened
-                                        ? 50
+                                        ? 80
                                         : -120
                                     : provider.currentPlanetIndex == 9
                                         ? provider.isPlanetOpened
-                                            ? 50
+                                            ? 80
                                             : -370
                                         : provider.isPlanetOpened
-                                            ? 50
+                                            ? 80
                                             : -80,
             child: GestureDetector(
               onHorizontalDragEnd: (details) {
@@ -244,18 +242,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   height: (provider.currentPlanetIndex == 0 ||
                           provider.currentPlanetIndex == 2)
                       ? provider.isPlanetOpened
-                          ? 300
+                          ? 250
                           : 570
                       : provider.currentPlanetIndex == 1
                           ? provider.isPlanetOpened
-                              ? 300
+                              ? 250
                               : 630
                           : provider.currentPlanetIndex == 5
                               ? provider.isPlanetOpened
-                                  ? 300
+                                  ? 250
                                   : 780
                               : provider.isPlanetOpened
-                                  ? 300
+                                  ? 250
                                   : 650,
                   child: Image.asset(
                     provider.planetData[provider.currentPlanetIndex].image!,
@@ -268,15 +266,27 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           provider.showText
               ? AnimatedPositioned(
                   left: 125,
-                  top: 500,
+                  top: 450,
                   right: provider.textAnimation ? 130 : -150,
                   child: Text(provider.currentPlanet.distance!,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.exo(
                           textStyle: TextStyle(
                               color: Colors.white.withOpacity(0.4),
-                              fontSize: 25,
+                              fontSize: 20,
                               fontWeight: FontWeight.w500))),
+                  duration: Duration(seconds: 1))
+              : SizedBox(),
+          provider.showText
+              ? AnimatedPositioned(
+                  // left: 125,
+                  top: 500,
+                  // right: provider.textAnimation ? 130 : -150,
+                  child: SingleChildScrollView(
+                    child: Center(
+                      child: ShowPlanetDetails(),
+                    ),
+                  ),
                   duration: Duration(seconds: 1))
               : SizedBox()
         ],

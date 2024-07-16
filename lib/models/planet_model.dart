@@ -5,7 +5,9 @@ class PlanetModel {
       velocity,
       distance,
       orbitalPeriod,
-      gravity;
+      gravity,
+      lengthOfDay,
+      surfaceArea;
 
   PlanetModel(
       {required this.planetName,
@@ -14,7 +16,9 @@ class PlanetModel {
       required this.velocity,
       required this.distance,
       required this.orbitalPeriod,
-      required this.gravity});
+      required this.gravity,
+      required this.lengthOfDay,
+      required this.surfaceArea});
 
   factory PlanetModel.fromJson(Map json) {
     return PlanetModel(
@@ -23,7 +27,9 @@ class PlanetModel {
         image: json['image'],
         velocity: json['velocity'],
         distance: json['distance'],
-        orbitalPeriod: json['orbitalPeriod'],
-        gravity: json['gravity']);
+        orbitalPeriod: json['orbital_period'],
+        gravity: json['gravity'],
+        lengthOfDay: json['length_of_day'],
+        surfaceArea: json['surface_area']);
   }
 }
