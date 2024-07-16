@@ -21,7 +21,7 @@ class _ShowPlanetDetailsState extends State<ShowPlanetDetails> {
   Color bgColor = Colors.transparent;
 
   Future<void> _addData() async {
-    List<CustomCard> listOfData = [
+    List listOfData = [
       CustomCard(
         leading: Image.asset("assets/images/orbit.png", color: Colors.white),
         title: 'orbital_period',
@@ -86,6 +86,7 @@ class _ShowPlanetDetailsState extends State<ShowPlanetDetails> {
         child: Padding(
           padding: const EdgeInsets.only(top: 40.0),
           child: AnimatedList(
+              shrinkWrap: true,
               key: _listKey,
               initialItemCount: listOfWidgets.length,
               padding: EdgeInsets.zero,
